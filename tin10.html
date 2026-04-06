@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề ôn tự luyện - Tin học 10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { --primary: #2563eb; --primary-hover: #1d4ed8; --bg-color: #f1f5f9; --surface: #ffffff; --text-main: #0f172a; --border: #cbd5e1; --success: #10b981; --warning: #f59e0b; --danger: #ef4444; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 20px; }
+
+        .exam-layout { max-width: 1200px; margin: 0 auto; display: flex; gap: 25px; align-items: flex-start; }
+        .exam-main { flex: 1; min-width: 0; }
+        .exam-sidebar { width: 320px; flex-shrink: 0; position: sticky; top: 20px; display: flex; flex-direction: column; gap: 20px; z-index: 100; }
+
+        /* GIAO DIỆN HEADER */
+        .classic-header { background: white; border: 1px solid var(--border); margin-bottom: 25px; font-family: 'Times New Roman', Times, serif; color: #000; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .classic-header-top { display: flex; flex-wrap: wrap; }
+        .classic-left { flex: 1.3; min-width: 300px; padding: 20px 25px; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 18px; }
+        .classic-right { flex: 1; min-width: 250px; padding: 20px; text-align: center; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+        .classic-header-bottom { border-top: 1px solid var(--border); padding: 12px; text-align: center; font-style: italic; color: #475569; font-size: 16px; }
+        .info-line { display: flex; align-items: flex-end; gap: 8px; white-space: nowrap; font-size: 18px; font-weight: bold; }
+        .dotted-line { border-bottom: 2px dotted #000; flex: 1; color: var(--primary); font-weight: bold; padding: 0 10px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.2; font-size: 18px;}
+        .line-short { flex: 0.3; min-width: 60px; }
+        .exam-title { font-weight: bold; font-size: 18px; text-transform: uppercase; letter-spacing: 0.5px;}
+        .exam-subject { font-weight: bold; font-size: 18px; text-transform: uppercase; }
+
+        .section-title { font-size: 16px; font-weight: bold; color: var(--surface); background: var(--primary); padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; text-transform: uppercase; }
+
+        .question-card { background: var(--surface); padding: 25px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; border: 1px solid var(--border); transition: 0.2s ease; scroll-margin-top: 20px; }
+        .question-card:hover { border-color: #93c5fd; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .question-text { font-size: 16px; font-weight: 600; margin-bottom: 15px; line-height: 1.5; white-space: pre-wrap;}
+        .question-text span { color: var(--primary); }
+
+        .mcq-options { display: grid; gap: 10px; }
+        .grid-1 { grid-template-columns: 1fr; }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+        .mcq-option { display: flex; align-items: center; padding: 12px 15px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: 0.2s; background: #f8fafc; height: 100%; box-sizing: border-box; font-size: 15px;}
+        .mcq-option:hover { background: #eff6ff; border-color: #bfdbfe; }
+        .mcq-option input[type="radio"] { margin-right: 12px; transform: scale(1.2); cursor: pointer; flex-shrink: 0; }
+
+        .tf-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .tf-table th, .tf-table td { border: 1px solid var(--border); padding: 12px; text-align: center; }
+        .tf-table th { background: #f1f5f9; font-weight: 600; }
+        .tf-table .tf-text { text-align: left; font-size: 15px; }
+        .tf-radio { transform: scale(1.3); cursor: pointer; }
+        
+        .rte-container { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+        .essay-box { width: 100%; min-height: 200px; padding: 15px; font-size: 15px; font-family: inherit; outline: none; box-sizing: border-box; background: white; overflow-y: auto; line-height: 1.6; border: none; resize: vertical; }
+        .essay-box:focus { background: #fafafa; }
+
+        .sidebar-box { background: var(--surface); padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+        .timer-title { text-align: center; font-size: 13px; font-weight: 600; color: #64748b; text-transform: uppercase; margin-bottom: 8px;}
+        .timer-display { background: #eff6ff; color: var(--danger); padding: 15px; border-radius: 8px; font-size: 32px; font-weight: bold; text-align: center; border: 2px solid #bfdbfe; font-family: monospace; letter-spacing: 2px; }
+        .palette-title { font-size: 14px; font-weight: bold; margin-bottom: 15px; border-bottom: 1px dashed var(--border); padding-bottom: 10px; }
+        .palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 15px; }
+        .palette-btn { aspect-ratio: 1; border: 1px solid var(--border); background: var(--surface); border-radius: 6px; font-weight: 600; font-size: 14px; color: var(--text-main); cursor: pointer; transition: 0.2s; display: flex; justify-content: center; align-items: center; padding: 0; }
+        .palette-btn:hover { border-color: var(--primary); color: var(--primary); background: #eff6ff;}
+        .palette-btn.answered { background: var(--primary); color: white; border-color: var(--primary); }
+        .palette-legend { display: flex; justify-content: space-between; font-size: 12px; color: #64748b; }
+        .legend-item { display: flex; align-items: center; gap: 5px; }
+        .box-color { width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--border); }
+        .box-color.done { background: var(--primary); border-color: var(--primary); }
+        .box-color.not-done { background: white; }
+
+        .btn-submit { width: 100%; background: var(--success); color: white; border: none; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3); text-transform: uppercase; }
+        .btn-submit:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4); }
+
+        /* GIAO DIỆN MODAL */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.75); display: none; justify-content: center; align-items: center; z-index: 2000; backdrop-filter: blur(3px); }
+        .modal-content { background: white; width: 400px; max-width: 90%; border-radius: 12px; overflow: hidden; animation: slideDown 0.3s ease; box-shadow: 0 25px 50px rgba(0,0,0,0.2); text-align: center; }
+        @keyframes slideDown { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .modal-body { padding: 30px 20px 20px; }
+        .modal-body i { font-size: 55px; color: var(--primary); margin-bottom: 15px; }
+        .modal-body h3 { margin: 0 0 10px; color: var(--text-main); font-size: 20px; text-transform: uppercase;}
+        .modal-body p { margin: 0; color: #475569; font-size: 15px; line-height: 1.5; }
+        .modal-footer { padding: 15px 20px; background: #f8fafc; border-top: 1px solid var(--border); display: flex; justify-content: center; gap: 10px; }
+        .btn-cancel, .btn-confirm { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; font-size: 14px;}
+        .btn-cancel { background: #94a3b8; color: white; }
+        .btn-cancel:hover { background: #64748b; }
+        .btn-confirm { background: var(--primary); color: white; }
+        .btn-confirm:hover { background: var(--primary-hover); }
+        
+        @media (max-width: 992px) {
+            .exam-layout { flex-direction: column; }
+            .exam-sidebar { width: 100%; position: static; order: -1; }
+            .palette-grid { grid-template-columns: repeat(10, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .classic-left { border-right: none; border-bottom: 1px solid var(--border); }
+            .info-line { flex-wrap: wrap; }
+            .palette-grid { grid-template-columns: repeat(7, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="exam-layout">
+    <div class="exam-main">
+        <div class="classic-header">
+            <div class="classic-header-top">
+                <div class="classic-left">
+                    <div class="info-line">
+                        TRƯỜNG <span class="dotted-line" id="display-school">---</span>
+                    </div>
+                    <div class="info-line">
+                        Họ và tên: <span class="dotted-line" id="display-name">---</span>
+                        Lớp <span class="dotted-line line-short" id="display-class">---</span>
+                    </div>
+                </div>
+                <div class="classic-right">
+                    <div class="exam-title">ĐỀ ÔN TẬP TỰ LUYỆN</div>
+                    <div class="exam-subject">MÔN: <span style="color: var(--primary);">TIN HỌC 10</span></div>
+                </div>
+            </div>
+            <div class="classic-header-bottom">
+                Thời gian làm bài: 45 phút (không kể thời gian giao đề)
+            </div>
+        </div>
+
+        <div id="quiz-container"></div>
+    </div>
+
+    <div class="exam-sidebar">
+        <div class="sidebar-box">
+            <div class="timer-title">Thời gian làm bài</div>
+            <div class="timer-display" id="timer">45:00</div>
+        </div>
+
+        <div class="sidebar-box">
+            <div class="palette-title"><i class="fa-solid fa-table-cells-large"></i> BẢNG CÂU HỎI</div>
+            <div class="palette-grid" id="palette-container"></div>
+            <div class="palette-legend">
+                <div class="legend-item"><div class="box-color done"></div> Đã làm</div>
+                <div class="legend-item"><div class="box-color not-done"></div> Chưa làm</div>
+            </div>
+        </div>
+
+        <button class="btn-submit" id="btn-submit" onclick="openSubmitModal()"><i class="fa-solid fa-paper-plane"></i> Nộp bài thi</button>
+    </div>
+</div>
+
+<div id="submitModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-body">
+            <i class="fa-solid fa-circle-question"></i>
+            <h3>Xác nhận nộp bài</h3>
+            <p id="submit-msg">Bạn có chắc chắn muốn nộp bài thi?</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeSubmitModal()">Quay lại</button>
+            <button class="btn-confirm" onclick="executeSubmit()"><i class="fa-solid fa-paper-plane"></i> Nộp bài ngay</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ==========================================
+    // 1. NGÂN HÀNG CÂU HỎI TIN HỌC 10 (BÀI 1 - 5)
+    // ==========================================
+    
+    const allMcqBank = [
+        { lesson: 1, lvl: "NB", q: "Đâu là trình tự hợp lý của quá trình xử lý thông tin?", options: ["Nhập dữ liệu -> Xử lý -> Xuất dữ liệu -> Lưu trữ", "Xử lý -> Xuất dữ liệu -> Nhập dữ liệu", "Lưu trữ -> Nhập dữ liệu -> Xuất dữ liệu", "Nhập dữ liệu -> Lưu trữ -> Xuất dữ liệu"], correct: 0, cols: 1 },
+        { lesson: 1, lvl: "NB", q: "Dữ liệu là gì?", options: ["Là các số liệu", "Là thông tin đã được đưa vào máy tính", "Là các văn bản", "Là các hình ảnh"], correct: 1, cols: 2 },
+        { lesson: 1, lvl: "TH", q: "Sự khác biệt giữa thông tin và dữ liệu là gì?", options: ["Thông tin là kết quả của việc xử lý dữ liệu để có ý nghĩa", "Dữ liệu là thông tin đã qua xử lý", "Chúng là một, không có sự khác biệt", "Thông tin có trước, dữ liệu có sau"], correct: 0, cols: 1 },
+        { lesson: 2, lvl: "NB", q: "Thiết bị nào sau đây được coi là thiết bị thông minh?", options: ["Máy tính bỏ túi", "Đồng hồ vạn năng", "Điện thoại thông minh (Smartphone)", "Máy tính Casio"], correct: 2, cols: 2 },
+        { lesson: 2, lvl: "NB", q: "Hệ thống IoT (Internet of Things) là gì?", options: ["Mạng kết nối các máy tính với nhau", "Mạng kết nối các thiết bị thông minh qua Internet", "Một loại phần mềm đồ họa", "Hệ thống quản lý văn bản"], correct: 1, cols: 1 },
+        { lesson: 2, lvl: "TH", q: "Đặc điểm quan trọng nhất của thiết bị thông minh là gì?", options: ["Giá thành rẻ", "Kích thước nhỏ gọn", "Có khả năng xử lý dữ liệu và kết nối mạng", "Vỏ bằng kim loại"], correct: 2, cols: 1 },
+        { lesson: 3, lvl: "NB", q: "Internet là mạng:", options: ["Mạng cục bộ (LAN)", "Mạng diện rộng (WAN)", "Mạng toàn cầu", "Mạng của một quốc gia"], correct: 2, cols: 2 },
+        { lesson: 3, lvl: "NB", q: "Giao thức truyền tải siêu văn bản thường dùng trên Internet là gì?", options: ["FTP", "SMTP", "HTTP/HTTPS", "TCP/IP"], correct: 2, cols: 2 },
+        { lesson: 3, lvl: "NB", q: "Thiết bị nào dùng để kết nối các máy tính trong mạng LAN?", options: ["Switch/Hub", "Chuột", "Bàn phím", "Màn hình"], correct: 0, cols: 2 },
+        { lesson: 4, lvl: "NB", q: "Dịch vụ lưu trữ Google Drive là ví dụ của:", options: ["Điện toán đám mây", "Phần mềm offline", "Mạng cục bộ", "Hệ điều hành"], correct: 0, cols: 2 },
+        { lesson: 4, lvl: "TH", q: "Lợi ích của điện toán đám mây là gì?", options: ["Tốn nhiều không gian lưu trữ máy cá nhân", "Phải mang theo USB mọi nơi", "Truy cập dữ liệu mọi lúc, mọi nơi có Internet", "Không cần kết nối mạng"], correct: 2, cols: 1 },
+        { lesson: 5, lvl: "NB", q: "Phần mềm độc hại (Malware) bao gồm những gì?", options: ["Virus, Trojan, Worm", "MS Word, Excel", "Chrome, Firefox", "Windows, Linux"], correct: 0, cols: 2 },
+        { lesson: 5, lvl: "NB", q: "Cách nào tốt nhất để bảo vệ tài khoản cá nhân?", options: ["Đặt mật khẩu dễ nhớ như 123456", "Dùng chung mật khẩu cho mọi tài khoản", "Sử dụng xác thực 2 lớp (2FA)", "Chia sẻ mật khẩu cho bạn thân"], correct: 2, cols: 1 },
+        { lesson: 5, lvl: "TH", q: "Khi nhận được tin nhắn từ người lạ yêu cầu cung cấp mã OTP, em nên làm gì?", options: ["Gửi mã ngay", "Hỏi ý kiến bạn bè", "Tuyệt đối không gửi và chặn người đó", "Gửi mã giả"], correct: 2, cols: 1 }
+    ];
+
+    const allTfBank = [
+        { lesson: 1, title: "Kiến thức về Dữ liệu và Thông tin:", items: [
+            { text: "a) Dữ liệu chỉ có thể ở dạng con số.", ans: "S" },
+            { text: "b) Thông tin giúp con người đưa ra quyết định tốt hơn.", ans: "D" },
+            { text: "c) Máy tính chỉ xử lý được thông tin khi đã chuyển thành dữ liệu số.", ans: "D" },
+            { text: "d) Đọc một cuốn sách là quá trình thu nhận dữ liệu.", ans: "D" }
+        ]},
+        { lesson: 3, title: "Mạng máy tính và Internet:", items: [
+            { text: "a) Mạng LAN là mạng kết nối các máy tính trong phạm vi nhỏ.", ans: "D" },
+            { text: "b) Internet là tài sản riêng của một công ty lớn.", ans: "S" },
+            { text: "c) Để kết nối Internet, máy tính cần có modem hoặc router.", ans: "D" },
+            { text: "d) Wifi là một loại kết nối mạng có dây.", ans: "S" }
+        ]},
+        { lesson: 5, title: "An toàn và đạo đức trên mạng:", items: [
+            { text: "a) Mọi thông tin trên mạng đều là tin cậy và chính xác.", ans: "S" },
+            { text: "b) Tự ý đăng ảnh người khác lên mạng khi chưa xin phép là vi phạm quyền riêng tư.", ans: "D" },
+            { text: "c) Cài đặt phần mềm diệt virus giúp máy tính an toàn hơn.", ans: "D" },
+            { text: "d) Click vào các đường link lạ không gây hại cho máy tính.", ans: "S" }
+        ]}
+    ];
+
+    const allEssayBank = [
+        { lesson: 1, text: "Hãy nêu ví dụ về việc một thông tin có thể được biểu diễn bằng nhiều loại dữ liệu khác nhau? (1.0 điểm)" },
+        { lesson: 2, text: "Em hiểu thế nào là Internet vạn vật (IoT)? Hãy kể tên 2 thiết bị thông minh trong gia đình mà em biết. (1.0 điểm)" },
+        { lesson: 4, text: "Nêu các ưu điểm và nhược điểm khi sử dụng dịch vụ lưu trữ trực tuyến (Cloud Storage)? (1.0 điểm)" },
+        { lesson: 5, text: "Em hãy nêu ít nhất 3 biện pháp để bảo vệ thông tin cá nhân khi tham gia mạng xã hội? (1.0 điểm)" }
+    ];
+
+    // ==========================================
+    // 2. THUẬT TOÁN XÁO TRỘN & KẾT XUẤT ĐỀ THI
+    // ==========================================
+    function shuffleArray(array) {
+        let curId = array.length, tmp, randId;
+        while (0 !== curId) {
+            randId = Math.floor(Math.random() * curId);
+            curId -= 1;
+            tmp = array[curId]; array[curId] = array[randId]; array[randId] = tmp;
+        }
+        return array;
+    }
+
+    let selectedMcq = [], selectedTf = [], selectedEssay = [];
+
+    function generateRandomExam() {
+        // Lấy 10 câu trắc nghiệm ngẫu nhiên
+        selectedMcq = shuffleArray([...allMcqBank]).slice(0, 10);
+        selectedMcq.forEach(q => {
+            let optsWithStatus = q.options.map((text, idx) => ({ text: text, isCorrect: (idx === q.correct) }));
+            optsWithStatus = shuffleArray(optsWithStatus);
+            q.options = optsWithStatus.map(o => o.text);
+            q.correct = optsWithStatus.findIndex(o => o.isCorrect); 
+        });
+
+        // Lấy 2 câu Đúng/Sai
+        selectedTf = shuffleArray([...allTfBank]).slice(0, 2);
+
+        // Lấy 2 câu tự luận
+        selectedEssay = shuffleArray([...allEssayBank]).slice(0, 2);
+
+        renderExam();
+    }
+
+    function renderExam() {
+        let html = '';
+        let paletteHtml = '';
+        let qCount = 1;
+
+        // Render MCQ
+        html += '<div class="section-title">I. TRẮC NGHIỆM KHÁCH QUAN (5 ĐIỂM)</div>';
+        selectedMcq.forEach((q, i) => {
+            html += `<div class="question-card" id="q${qCount}">
+                <div class="question-text"><span>Câu ${qCount}:</span> ${q.q}</div>
+                <div class="mcq-options grid-${q.cols}">`;
+            q.options.forEach((opt, j) => {
+                html += `<label class="mcq-option" onclick="markAnswered(${qCount})">
+                            <input type="radio" name="mcq_${i}" value="${j}"> ${opt}
+                         </label>`;
+            });
+            html += `</div></div>`;
+            paletteHtml += `<button class="palette-btn" id="btn-pal-${qCount}" onclick="scrollToQ(${qCount})">${qCount}</button>`;
+            qCount++;
+        });
+
+        // Render T/F
+        html += '<div class="section-title">II. TRẮC NGHIỆM ĐÚNG/SAI (2 ĐIỂM)</div>';
+        selectedTf.forEach((q, i) => {
+             html += `<div class="question-card" id="q${qCount}">
+                <div class="question-text"><span>Câu ${qCount}:</span> ${q.title}</div>
+                <table class="tf-table">
+                    <tr><th>Phát biểu</th><th>Đúng</th><th>Sai</th></tr>`;
+             q.items.forEach((item, j) => {
+                 html += `<tr>
+                    <td class="tf-text">${item.text}</td>
+                    <td><input type="radio" name="tf_${i}_${j}" value="D" class="tf-radio" onclick="markAnswered(${qCount})"></td>
+                    <td><input type="radio" name="tf_${i}_${j}" value="S" class="tf-radio" onclick="markAnswered(${qCount})"></td>
+                 </tr>`;
+             });
+             html += `</table></div>`;
+             paletteHtml += `<button class="palette-btn" id="btn-pal-${qCount}" onclick="scrollToQ(${qCount})">${qCount}</button>`;
+             qCount++;
+        });
+
+        // Render Tự luận
+        html += '<div class="section-title">III. TỰ LUẬN (3 ĐIỂM)</div>';
+        selectedEssay.forEach((q, i) => {
+            html += `<div class="question-card" id="q${qCount}">
+                <div class="question-text"><span>Câu ${qCount}:</span> ${q.text}</div>
+                <div class="rte-container">
+                    <textarea class="essay-box" placeholder="Nhập câu trả lời của bạn vào đây..." oninput="markAnswered(${qCount}, this.value)"></textarea>
+                </div>
+            </div>`;
+            paletteHtml += `<button class="palette-btn" id="btn-pal-${qCount}" onclick="scrollToQ(${qCount})">${qCount}</button>`;
+            qCount++;
+        });
+
+        document.getElementById('quiz-container').innerHTML = html;
+        document.getElementById('palette-container').innerHTML = paletteHtml;
+    }
+
+    // ==========================================
+    // 3. TƯƠNG TÁC GIAO DIỆN & BẢNG ĐIỀU KHIỂN
+    // ==========================================
+    function scrollToQ(id) {
+        document.getElementById(`q${id}`).scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function markAnswered(id, textValue = null) {
+        let btn = document.getElementById(`btn-pal-${id}`);
+        if(textValue !== null) {
+            if(textValue.trim().length > 0) btn.classList.add('answered');
+            else btn.classList.remove('answered');
+        } else {
+            btn.classList.add('answered');
+        }
+    }
+
+    // Modal nộp bài
+    function openSubmitModal() { document.getElementById('submitModal').style.display = 'flex'; }
+    function closeSubmitModal() { document.getElementById('submitModal').style.display = 'none'; }
+    function executeSubmit() {
+        closeSubmitModal();
+        alert("🎉 Chúc mừng cậu đã hoàn thành bài thi! Hệ thống đang lưu kết quả...");
+        // Logic tính điểm có thể phát triển thêm tại đây
+    }
+
+    // Đồng hồ đếm ngược
+    let timeLeft = 45 * 60;
+    setInterval(() => {
+        if(timeLeft <= 0) return;
+        timeLeft--;
+        let m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+        let s = (timeLeft % 60).toString().padStart(2, '0');
+        document.getElementById('timer').innerText = `${m}:${s}`;
+    }, 1000);
+
+    // Khởi tạo
+    window.onload = generateRandomExam;
+
+</script>
+</body>
+</html>
