@@ -185,152 +185,138 @@
 
 <script>
     // ==========================================
-    // 1. NGÂN HÀNG CÂU HỎI KNTT - TIN HỌC (Ví dụ đang giữ lại khối 6, bạn có thể thay nội dung bằng khối 10 sau)
-    // SỐ LƯỢNG: GẤP 3 LẦN SO VỚI MA TRẬN YÊU CẦU
+    // 1. NGÂN HÀNG CÂU HỎI (Cần thay thế bằng kiến thức TIN HỌC 11)
     // ==========================================
     
-    // --- NGÂN HÀNG TRẮC NGHIỆM MCQ (36 CÂU) ---
     const allMcqBank = [
-        // BÀI 10: SƠ ĐỒ TƯ DUY (9 Biết, 3 Hiểu)
-        { lesson: 10, lvl: "NB", q: "Sơ đồ tư duy là gì?", options: ["Một công cụ ghi chép và hệ thống thông tin trực quan", "Một phần mềm gõ văn bản", "Một thiết bị máy tính", "Một chương trình diệt virus"], correct: 0, cols: 1 },
-        { lesson: 10, lvl: "NB", q: "Thành phần nào luôn được đặt ở vị trí trung tâm của sơ đồ tư duy?", options: ["Từ khóa", "Hình ảnh minh họa", "Chủ đề chính", "Các nhánh phụ"], correct: 2, cols: 2 },
-        { lesson: 10, lvl: "NB", q: "Trong sơ đồ tư duy, các đường nối (nhánh) có tác dụng gì?", options: ["Trang trí cho đẹp", "Thể hiện mối quan hệ giữa các ý", "Chia màn hình thành các phần", "Đánh số thứ tự"], correct: 1, cols: 1 },
-        { lesson: 10, lvl: "NB", q: "Từ khóa trong sơ đồ tư duy nên có đặc điểm gì?", options: ["Càng dài càng tốt", "Ngắn gọn, mang ý nghĩa chính", "Phải viết bằng tiếng Anh", "Phải là số"], correct: 1, cols: 1 },
-        { lesson: 10, lvl: "NB", q: "Lợi ích của sơ đồ tư duy là gì?", options: ["Giúp nhìn thấy bức tranh tổng thể và ghi nhớ tốt hơn", "Tính toán số liệu phức tạp", "Chỉnh sửa video", "Bảo mật thông tin"], correct: 0, cols: 1 },
-        { lesson: 10, lvl: "NB", q: "Sơ đồ tư duy KHÔNG bao gồm thành phần nào sau đây?", options: ["Chủ đề chính", "Từ khóa", "Công thức toán học tự động", "Nhánh và đường nối"], correct: 2, cols: 1 },
-        { lesson: 10, lvl: "NB", q: "Phần mềm nào sau đây dùng để tạo sơ đồ tư duy?", options: ["MindMaple Lite", "MS Excel", "MS Paint", "Zalo"], correct: 0, cols: 2 },
-        { lesson: 10, lvl: "NB", q: "Chủ đề phụ trong sơ đồ tư duy được phát triển từ đâu?", options: ["Từ hình ảnh", "Từ chủ đề chính", "Từ màu nền", "Từ viền trang"], correct: 1, cols: 2 },
-        { lesson: 10, lvl: "NB", q: "Để Sơ đồ tư duy trực quan hơn, người ta thường sử dụng thêm yếu tố nào?", options: ["Mật khẩu", "Văn bản siêu dài", "Màu sắc và hình ảnh", "Bảng biểu phức tạp"], correct: 2, cols: 1 },
-        { lesson: 10, lvl: "TH", q: "Tại sao nói sơ đồ tư duy giúp quá trình ghi nhớ trở nên dễ dàng hơn?", options: ["Vì nó ép buộc học sinh phải chép tay nhiều lần", "Vì nó sử dụng từ khóa kết hợp hình ảnh, màu sắc để kích thích não bộ", "Vì nó là một tệp lưu trong USB", "Vì nội dung của nó luôn ít hơn 10 chữ"], correct: 1, cols: 1 },
-        { lesson: 10, lvl: "TH", q: "Ưu điểm của việc vẽ sơ đồ tư duy bằng phần mềm so với vẽ tay là gì?", options: ["Dễ dàng chỉnh sửa, thêm bớt nhánh mà không làm bẩn hình", "Chỉ dùng được 1 màu duy nhất", "Không thể chèn hình ảnh", "Bắt buộc phải có mạng Internet mới xem được"], correct: 0, cols: 1 },
-        { lesson: 10, lvl: "TH", q: "Khi chuyển một đoạn văn bản tóm tắt sang sơ đồ tư duy, bước đầu tiên em cần làm là gì?", options: ["Chọn màu mực", "Xác định Chủ đề chính", "Đếm số dòng của văn bản", "Lưu tệp"], correct: 1, cols: 2 },
+        // BÀI 11: TẠO BÀI TRÌNH CHIẾU
+        { lesson: 11, lvl: "NB", q: "Chức năng cơ bản nhất của phần mềm trình chiếu là gì?", options: ["Tạo các trang chiếu chứa nội dung văn bản, hình ảnh, âm thanh...", "Tính toán và lập bảng thống kê tự động", "Chỉnh sửa video chuyên nghiệp", "Quản lý cơ sở dữ liệu"], correct: 0, cols: 1 },
+        { lesson: 11, lvl: "NB", q: "Trong một bài trình chiếu, trang đầu tiên thường được gọi là gì?", options: ["Trang nội dung", "Trang tiêu đề", "Trang kết luận", "Trang tóm tắt"], correct: 1, cols: 2 },
+        { lesson: 11, lvl: "NB", q: "Mỗi trang nội dung thường bắt đầu bằng thành phần nào?", options: ["Hình ảnh minh họa", "Nội dung chi tiết", "Tiêu đề trang", "Bảng biểu"], correct: 2, cols: 2 },
+        { lesson: 11, lvl: "NB", q: "Cấu trúc phân cấp trong bài trình chiếu thường được thể hiện bằng cách nào?", options: ["Đổi màu chữ liên tục", "Sử dụng các dấu đầu dòng (Bullet) với mức lề khác nhau", "Sử dụng hiệu ứng âm thanh", "Chèn thật nhiều hình ảnh"], correct: 1, cols: 1 },
+        { lesson: 11, lvl: "NB", q: "Phần mềm nào sau đây là phần mềm trình chiếu phổ biến?", options: ["Microsoft Excel", "Microsoft Word", "Microsoft PowerPoint", "Microsoft Paint"], correct: 2, cols: 2 },
+        { lesson: 11, lvl: "NB", q: "Trang tiêu đề thường chứa thông tin gì?", options: ["Tên chủ đề bài trình chiếu và tên tác giả", "Toàn bộ nội dung bài học", "Lời cảm ơn khán giả", "Bảng thống kê số liệu"], correct: 0, cols: 1 },
+        { lesson: 11, lvl: "NB", q: "Mẫu bố trí (Layout) trang chiếu dùng để làm gì?", options: ["Xóa trang chiếu", "Định dạng sẵn vị trí của tiêu đề, văn bản, hình ảnh trên trang", "Tạo hiệu ứng chuyển động", "Lưu tệp trình chiếu"], correct: 1, cols: 1 },
+        { lesson: 11, lvl: "NB", q: "Phím tắt dùng để tạo một trang trình chiếu mới là gì?", options: ["Ctrl + N", "Ctrl + M", "Ctrl + S", "Ctrl + C"], correct: 1, cols: 2 },
+        { lesson: 11, lvl: "NB", q: "Để thay đổi mẫu bố trí cho một trang chiếu đã có, ta chọn lệnh nào?", options: ["Home > Layout", "Insert > New Slide", "Design > Themes", "Transitions"], correct: 0, cols: 2 },
+        { lesson: 11, lvl: "NB", q: "Mục đích chính của việc dùng cấu trúc phân cấp là gì?", options: ["Làm cho chữ to hơn", "Trình bày thông tin mạch lạc, rõ ràng, dễ hiểu", "Thêm hiệu ứng đẹp mắt", "Tự động dịch ngôn ngữ"], correct: 1, cols: 1 },
+        { lesson: 11, lvl: "NB", q: "Để xem trước bài trình chiếu từ trang đầu tiên, ta nhấn phím gì?", options: ["F5", "Shift + F5", "Esc", "Enter"], correct: 0, cols: 2 },
+        { lesson: 11, lvl: "NB", q: "Trong cấu trúc phân cấp, thao tác nhấn phím Tab ở đầu dòng sẽ làm gì?", options: ["Tăng mức phân cấp (lùi vào trong)", "Giảm mức phân cấp (đưa ra ngoài)", "Xóa dòng đó", "Tạo trang mới"], correct: 0, cols: 1 },
 
-        // BÀI 11: ĐỊNH DẠNG VĂN BẢN (12 Biết)
-        { lesson: 11, lvl: "NB", q: "Chức năng cơ bản của phần mềm soạn thảo văn bản là gì?", options: ["Tạo, định dạng và lưu trữ văn bản", "Lập bảng điểm", "Chỉnh sửa video", "Vẽ sơ đồ tư duy"], correct: 0, cols: 1 },
-        { lesson: 11, lvl: "NB", q: "Để căn giữa cho một đoạn văn bản, em dùng nút lệnh nào?", options: ["Align Left", "Center", "Align Right", "Justify"], correct: 1, cols: 2 },
-        { lesson: 11, lvl: "NB", q: "Thao tác nào dùng để thay đổi kiểu chữ thành in đậm?", options: ["Nhấn nút Italic (I)", "Nhấn nút Underline (U)", "Nhấn nút Bold (B)", "Nhấn nút Font Color"], correct: 2, cols: 1 },
-        { lesson: 11, lvl: "NB", q: "Phím tắt dùng để lưu tệp văn bản là gì?", options: ["Ctrl + C", "Ctrl + P", "Ctrl + S", "Ctrl + X"], correct: 2, cols: 2 },
-        { lesson: 11, lvl: "NB", q: "Khổ giấy phổ biến nhất dùng trong in ấn hành chính ở Việt Nam là?", options: ["A3", "A5", "Letter", "A4"], correct: 3, cols: 2 },
-        { lesson: 11, lvl: "NB", q: "Lề trang văn bản (Margins) bao gồm những lề nào?", options: ["Lề trái, lề phải", "Lề trên, lề dưới", "Lề trên, dưới, trái, phải", "Lề giữa"], correct: 2, cols: 2 },
-        { lesson: 11, lvl: "NB", q: "Hướng trang văn bản đứng trong tiếng Anh gọi là gì?", options: ["Landscape", "Portrait", "Margins", "Size"], correct: 1, cols: 2 },
-        { lesson: 11, lvl: "NB", q: "Nút lệnh Justify có chức năng gì?", options: ["Căn lề trái", "Căn lề phải", "Căn đều hai bên", "Căn giữa"], correct: 2, cols: 2 },
-        { lesson: 11, lvl: "NB", q: "Để thay đổi khoảng cách giữa các dòng trong đoạn văn, ta dùng lệnh nào?", options: ["Font Size", "Line Spacing", "Text Color", "Bold"], correct: 1, cols: 2 },
-        { lesson: 11, lvl: "NB", q: "Lệnh thụt lề dòng đầu tiên của đoạn văn nằm ở đâu?", options: ["Mục Font", "Hộp thoại Paragraph > Special > First line", "Mục Layout", "Mục Insert"], correct: 1, cols: 1 },
-        { lesson: 11, lvl: "NB", q: "Phím tắt để in nghiêng văn bản là gì?", options: ["Ctrl + I", "Ctrl + B", "Ctrl + U", "Ctrl + E"], correct: 0, cols: 2 },
-        { lesson: 11, lvl: "NB", q: "Phần mềm MS Word thuộc loại phần mềm nào?", options: ["Phần mềm bảng tính", "Phần mềm trình chiếu", "Phần mềm soạn thảo văn bản", "Hệ điều hành"], correct: 2, cols: 1 },
+        // BÀI 12: ĐỊNH DẠNG ĐỐI TƯỢNG TRÊN TRANG CHIẾU
+        { lesson: 12, lvl: "NB", q: "Để chèn hình ảnh vào trang chiếu, ta sử dụng dải lệnh nào?", options: ["Home", "Insert", "Design", "Transitions"], correct: 1, cols: 2 },
+        { lesson: 12, lvl: "NB", q: "Có thể sao chép văn bản từ phần mềm MS Word sang MS PowerPoint được không?", options: ["Có, nhưng chỉ sao chép được một dòng", "Hoàn toàn có thể", "Không thể sao chép được", "Chỉ sao chép được chữ cái, không sao chép được số"], correct: 1, cols: 1 },
+        { lesson: 12, lvl: "NB", q: "Thao tác nào dùng để thay đổi kích thước hình ảnh trên trang chiếu?", options: ["Kéo thả các nút tròn ở góc hoặc cạnh của hình ảnh", "Nhấn đúp chuột vào hình ảnh", "Nhấn phím Delete", "Nhấn phím Space"], correct: 0, cols: 1 },
+        { lesson: 12, lvl: "NB", q: "Nhóm lệnh Font trên dải lệnh Home dùng để làm gì?", options: ["Chèn hình ảnh", "Định dạng văn bản (phông, cỡ, màu chữ...)", "Tạo hiệu ứng động", "Chọn mẫu bố trí"], correct: 1, cols: 1 },
+        { lesson: 12, lvl: "NB", q: "Công cụ Theme (mẫu định dạng) nằm ở dải lệnh nào?", options: ["Insert", "Design", "Animations", "View"], correct: 1, cols: 2 },
+        { lesson: 12, lvl: "NB", q: "Mẫu định dạng (Theme) cung cấp sẵn những yếu tố nào?", options: ["Chỉ màu nền", "Chỉ phông chữ", "Màu nền, màu chữ, phông chữ và các hiệu ứng trực quan", "Hiệu ứng chuyển trang"], correct: 2, cols: 1 },
+        { lesson: 12, lvl: "NB", q: "Để xoay hình ảnh một góc tùy ý, ta sử dụng biểu tượng nào trên hình ảnh?", options: ["Nút tròn ở các góc", "Mũi tên xoay vòng ở cạnh trên hình ảnh", "Nút vuông ở giữa", "Nút tam giác"], correct: 1, cols: 1 },
+        { lesson: 12, lvl: "NB", q: "Phím tắt dùng để sao chép văn bản là gì?", options: ["Ctrl + X", "Ctrl + V", "Ctrl + C", "Ctrl + P"], correct: 2, cols: 2 },
+        { lesson: 12, lvl: "NB", q: "Trong dải lệnh Picture Format, nút lệnh Picture Border dùng để làm gì?", options: ["Tạo hiệu ứng bóng đổ cho ảnh", "Thêm đường viền cho ảnh", "Cắt xén ảnh", "Đổi màu nền trang chiếu"], correct: 1, cols: 1 },
+        { lesson: 12, lvl: "NB", q: "Tổ hợp phím Ctrl + V dùng để thực hiện lệnh gì?", options: ["Cắt (Cut)", "Sao chép (Copy)", "Dán (Paste)", "Lưu (Save)"], correct: 2, cols: 2 },
+        { lesson: 12, lvl: "NB", q: "Lệnh Bring Forward dùng để làm gì đối với các đối tượng hình ảnh bị xếp chồng lên nhau?", options: ["Đưa đối tượng lên trên một lớp", "Đưa đối tượng xuống dưới cùng", "Xóa đối tượng", "Nhân bản đối tượng"], correct: 0, cols: 1 },
+        { lesson: 12, lvl: "NB", q: "Hình ảnh đưa vào bài trình chiếu cần phải đảm bảo điều kiện gì về mặt đạo đức?", options: ["Hình ảnh phải thật to", "Hình ảnh phải có bản quyền hoặc nguồn gốc rõ ràng", "Hình ảnh phải tự vẽ", "Hình ảnh phải có nhiều màu sắc"], correct: 1, cols: 1 },
 
-        // BÀI 12: TRÌNH BÀY THÔNG TIN Ở DẠNG BẢNG (9 Biết, 3 Hiểu)
-        { lesson: 12, lvl: "NB", q: "Bảng (Table) được cấu tạo từ các thành phần cơ bản nào?", options: ["Hàng, cột và ô", "Văn bản và hình ảnh", "Đường thẳng và đường chéo", "Kí tự và con số"], correct: 0, cols: 2 },
-        { lesson: 12, lvl: "NB", q: "Sự giao nhau giữa một hàng và một cột trong bảng được gọi là gì?", options: ["Bảng", "Ô (Cell)", "Tiêu đề", "Đường viền"], correct: 1, cols: 2 },
-        { lesson: 12, lvl: "NB", q: "Để chèn bảng vào văn bản trong MS Word, em chọn thẻ lệnh nào?", options: ["Home", "Design", "Insert", "Layout"], correct: 2, cols: 2 },
-        { lesson: 12, lvl: "NB", q: "Nút lệnh Merge Cells có chức năng gì?", options: ["Xóa ô", "Tách một ô thành nhiều ô", "Thêm cột", "Gộp nhiều ô thành một ô"], correct: 3, cols: 2 },
-        { lesson: 12, lvl: "NB", q: "Để thêm một hàng mới vào ngay bên dưới hàng đang chọn, em dùng lệnh gì?", options: ["Insert Above", "Insert Below", "Insert Left", "Delete Rows"], correct: 1, cols: 2 },
-        { lesson: 12, lvl: "NB", q: "Để xóa một cột trong bảng, em bôi đen cột đó và chọn lệnh nào?", options: ["Delete Rows", "Delete Cells", "Delete Columns", "Delete Table"], correct: 2, cols: 2 },
-        { lesson: 12, lvl: "NB", q: "Nút lệnh Split Cells dùng để làm gì?", options: ["Gộp nhiều ô", "Tách một ô thành nhiều ô nhỏ", "Tô màu ô", "Kẻ viền cho ô"], correct: 1, cols: 2 },
-        { lesson: 12, lvl: "NB", q: "Cột (Column) trong bảng chạy theo hướng nào?", options: ["Hướng ngang", "Hướng dọc (từ trên xuống)", "Hướng chéo", "Hướng vòng tròn"], correct: 1, cols: 1 },
-        { lesson: 12, lvl: "NB", q: "Để thay đổi độ rộng của một cột, ta đưa con trỏ chuột vào đâu?", options: ["Giữa ô", "Đường viền ngăn cách giữa các cột", "Góc bảng", "Bên ngoài bảng"], correct: 1, cols: 1 },
-        { lesson: 12, lvl: "TH", q: "Ưu điểm lớn nhất của việc trình bày thông tin dưới dạng bảng là gì?", options: ["Làm cho văn bản dài ra", "Thông tin được trình bày cô đọng, có cấu trúc, dễ tìm kiếm và so sánh", "Chữ sẽ tự động đổi màu", "Máy tính lưu tệp nhanh hơn"], correct: 1, cols: 1 },
-        { lesson: 12, lvl: "TH", q: "Khi nào em NÊN sử dụng bảng để trình bày thông tin?", options: ["Khi viết một bài thơ", "Khi viết đơn xin phép nghỉ học", "Khi lập thời khóa biểu hoặc danh sách lớp", "Khi tả cảnh sân trường"], correct: 2, cols: 1 },
-        { lesson: 12, lvl: "TH", q: "Nếu muốn tạo một tiêu đề chung bao trùm lên 3 cột chứa thông tin chi tiết, em phải làm gì?", options: ["Xóa 2 cột đi", "Bôi đen 3 ô ở hàng đầu tiên và chọn Merge Cells", "Tạo 3 bảng khác nhau", "Dùng lệnh Split Cells"], correct: 1, cols: 1 }
+        // BÀI 13: HOÀN THIỆN BÀI TRÌNH CHIẾU
+        { lesson: 13, lvl: "NB", q: "Hiệu ứng động trong PowerPoint được chia làm mấy loại chính?", options: ["1 loại", "2 loại (Chuyển trang và Đối tượng)", "3 loại", "4 loại"], correct: 1, cols: 2 },
+        { lesson: 13, lvl: "NB", q: "Hiệu ứng chuyển trang (Transitions) được áp dụng cho đối tượng nào?", options: ["Từng dòng chữ", "Hình ảnh", "Toàn bộ trang chiếu", "Chỉ trang tiêu đề"], correct: 2, cols: 2 },
+        { lesson: 13, lvl: "NB", q: "Dải lệnh Animations dùng để tạo hiệu ứng cho đối tượng nào?", options: ["Trang chiếu", "Văn bản, hình ảnh trên trang chiếu", "Tệp âm thanh", "Tệp trình chiếu"], correct: 1, cols: 1 },
+        { lesson: 13, lvl: "NB", q: "Hiệu ứng xuất hiện (Entrance) thuộc dải lệnh nào?", options: ["Design", "Transitions", "Animations", "Slide Show"], correct: 2, cols: 2 },
+        { lesson: 13, lvl: "NB", q: "Nhóm hiệu ứng Emphasis trong Animations có biểu tượng màu gì?", options: ["Màu xanh lá cây", "Màu vàng", "Màu đỏ", "Màu xanh dương"], correct: 1, cols: 2 },
+        { lesson: 13, lvl: "NB", q: "Để loại bỏ hiệu ứng chuyển trang, ta chọn lệnh nào trong dải lệnh Transitions?", options: ["None", "Push", "Fade", "Wipe"], correct: 0, cols: 2 },
+        { lesson: 13, lvl: "TH", q: "Mục đích chính của việc sử dụng hiệu ứng động trong bài trình chiếu là gì?", options: ["Làm cho người xem bị phân tâm", "Làm cho bài trình chiếu sinh động, thu hút sự chú ý vào nội dung quan trọng", "Kéo dài thời gian thuyết trình", "Che giấu các lỗi chính tả"], correct: 1, cols: 1 },
+        { lesson: 13, lvl: "TH", q: "Theo nguyên tắc thiết kế, ta nên sử dụng hiệu ứng động như thế nào?", options: ["Càng nhiều hiệu ứng phức tạp càng tốt", "Sử dụng đơn giản, thống nhất và có chọn lọc", "Mỗi trang sử dụng một hiệu ứng chuyển trang khác nhau", "Chỉ dùng hiệu ứng cho hình ảnh, không dùng cho văn bản"], correct: 1, cols: 1 },
+        { lesson: 13, lvl: "TH", q: "Nếu áp dụng quá nhiều hiệu ứng rườm rà cho các dòng chữ liên tiếp nhau, điều gì sẽ xảy ra?", options: ["Bài trình chiếu trở nên chuyên nghiệp hơn", "Người xem sẽ ghi nhớ bài tốt hơn", "Gây mất tập trung và làm người xem rối mắt", "Dung lượng tệp sẽ nhỏ đi"], correct: 2, cols: 1 },
+        { lesson: 13, lvl: "TH", q: "Để bài trình chiếu có tính thống nhất, ta nên:", options: ["Áp dụng cùng một kiểu hiệu ứng chuyển trang cho tất cả các trang", "Mỗi trang dùng một phông chữ khác nhau", "Mỗi trang dùng một màu nền khác nhau", "Không bao giờ dùng hiệu ứng"], correct: 0, cols: 1 },
+        { lesson: 13, lvl: "TH", q: "Đâu là thao tác sắp xếp lại thứ tự xuất hiện của các hiệu ứng đối tượng?", options: ["Dùng lệnh Animation Pane và kéo thả các mục hiệu ứng", "Thay đổi màu chữ của đối tượng", "Đổi mẫu định dạng (Theme) mới", "Dùng dải lệnh View"], correct: 0, cols: 1 },
+        { lesson: 13, lvl: "TH", q: "Sự khác biệt cơ bản giữa Transitions và Animations là gì?", options: ["Transitions dùng cho hình ảnh, Animations dùng cho chữ", "Transitions là hiệu ứng chuyển giao giữa các trang, Animations là hiệu ứng của các đối tượng trên 1 trang", "Không có sự khác biệt", "Transitions chỉ có ở MS Word"], correct: 1, cols: 1 }
     ];
 
-    // --- NGÂN HÀNG ĐÚNG/SAI (12 Câu lớn) ---
     const allTfBank = [
-        // BÀI 10 (3 Câu)
-        { lesson: 10, title: "Kiến thức chung về Sơ đồ tư duy:", items: [
-            { text: "a) Chủ đề chính của sơ đồ tư duy luôn nằm ở vị trí trung tâm.", ans: "D" },
-            { text: "b) Các nhánh phụ dùng để nối từ khóa với hình ảnh không liên quan.", ans: "S" },
-            { text: "c) Sơ đồ tư duy giúp ta nhìn thấy bức tranh tổng thể của một vấn đề.", ans: "D" },
-            { text: "d) Sơ đồ tư duy bắt buộc chỉ được vẽ bằng 2 màu mực.", ans: "S" }
+        { lesson: 11, title: "Tìm hiểu về cấu trúc bài trình chiếu:", items: [
+            { text: "a) Trang tiêu đề thường là trang đầu tiên, cho biết chủ đề của bài trình chiếu.", ans: "D" },
+            { text: "b) Trang nội dung bắt buộc phải có hình ảnh minh họa.", ans: "S" },
+            { text: "c) Mỗi trang chiếu thường có một tiêu đề trang.", ans: "D" },
+            { text: "d) Cấu trúc phân cấp giúp thông tin được trình bày mạch lạc, rõ ràng.", ans: "D" }
         ]},
-        { lesson: 10, title: "Thành phần của Sơ đồ tư duy:", items: [
-            { text: "a) Từ khóa trong sơ đồ tư duy phải là những đoạn văn dài.", ans: "S" },
-            { text: "b) Hình ảnh minh họa giúp sơ đồ tư duy sinh động và dễ nhớ hơn.", ans: "D" },
-            { text: "c) Đường nối (nhánh) thể hiện mối liên hệ giữa các ý.", ans: "D" },
-            { text: "d) Không thể thêm nhánh mới sau khi đã vẽ xong sơ đồ tư duy.", ans: "S" }
+        { lesson: 11, title: "Thao tác cơ bản trên phần mềm trình chiếu:", items: [
+            { text: "a) Tổ hợp phím Ctrl + M dùng để lưu bài trình chiếu.", ans: "S" },
+            { text: "b) Layout là các mẫu bố trí nội dung đã được thiết kế sẵn.", ans: "D" },
+            { text: "c) Để thêm mức phân cấp (lùi đầu dòng), ta nhấn phím Tab.", ans: "D" },
+            { text: "d) Không thể thay đổi Layout của một trang chiếu sau khi đã tạo.", ans: "S" }
         ]},
-        { lesson: 10, title: "Tạo sơ đồ tư duy bằng phần mềm:", items: [
-            { text: "a) MindMaple Lite là một trong những phần mềm dùng để tạo sơ đồ tư duy.", ans: "D" },
-            { text: "b) Khi dùng phần mềm, ta không thể di chuyển vị trí của các nhánh.", ans: "S" },
-            { text: "c) Vẽ sơ đồ tư duy trên máy tính giúp việc chỉnh sửa, chia sẻ trở nên dễ dàng.", ans: "D" },
-            { text: "d) Phần mềm vẽ sơ đồ tư duy tự động tính toán được điểm trung bình của học sinh.", ans: "S" }
+        { lesson: 11, title: "Phân tích cấu trúc phân cấp:", items: [
+            { text: "a) Cấu trúc phân cấp chỉ cho phép tối đa 2 mức.", ans: "S" },
+            { text: "b) Nhấn Shift + Tab để giảm mức phân cấp (đưa nội dung ra lề trái).", ans: "D" },
+            { text: "c) Kí hiệu đầu dòng (bullet) của các mức phân cấp khác nhau thường giống hệt nhau.", ans: "S" },
+            { text: "d) Sử dụng cấu trúc phân cấp giúp người xem dễ nắm bắt các ý chính và ý phụ.", ans: "D" }
         ]},
-
-        // BÀI 11 (3 Câu)
-        { lesson: 11, title: "Định dạng đoạn văn bản:", items: [
-            { text: "a) Khi soạn thảo, MS Word luôn tự động căn lề phải cho mọi đoạn văn.", ans: "S" },
-            { text: "b) Lệnh Justify dùng để căn đều cả hai bên lề trái và phải.", ans: "D" },
-            { text: "c) Ta có thể thay đổi khoảng cách giữa các dòng trong một đoạn văn (Line spacing).", ans: "D" },
-            { text: "d) Chức năng thụt lề dòng đầu (First line) chỉ áp dụng được cho tiêu đề.", ans: "S" }
+        { lesson: 12, title: "Định dạng văn bản và hình ảnh:", items: [
+            { text: "a) Ta có thể sao chép một đoạn văn từ Word và dán (Paste) vào PowerPoint.", ans: "D" },
+            { text: "b) Không thể thay đổi màu sắc của chữ trên trang chiếu.", ans: "S" },
+            { text: "c) Hình ảnh chèn vào trang chiếu có thể phóng to, thu nhỏ tùy ý.", ans: "D" },
+            { text: "d) Mẫu định dạng (Theme) chỉ thay đổi màu nền, không làm thay đổi phông chữ.", ans: "S" }
         ]},
-        { lesson: 11, title: "Thiết lập trang văn bản:", items: [
-            { text: "a) Lề trang (Margins) là khoảng trắng từ mép giấy đến phần nội dung văn bản.", ans: "D" },
-            { text: "b) Hướng trang Landscape là hướng trang dọc.", ans: "S" },
-            { text: "c) Khổ giấy A4 có kích thước lớn hơn khổ giấy A3.", ans: "S" },
-            { text: "d) Việc thiết lập lề và khổ giấy ảnh hưởng trực tiếp đến kết quả khi in ra giấy.", ans: "D" }
+        { lesson: 12, title: "Nguyên tắc thiết kế trang chiếu:", items: [
+            { text: "a) Nên đưa toàn bộ đoạn văn bản dài vào một trang chiếu để người xem tự đọc.", ans: "S" },
+            { text: "b) Màu chữ và màu nền nên có độ tương phản cao để dễ nhìn (VD: nền tối - chữ sáng).", ans: "D" },
+            { text: "c) Hình ảnh minh họa cần phù hợp với nội dung bài thuyết trình.", ans: "D" },
+            { text: "d) Lấy bất kỳ hình ảnh nào trên Internet đưa vào bài trình chiếu cũng không vi phạm bản quyền.", ans: "S" }
         ]},
-        { lesson: 11, title: "Tác dụng của việc định dạng văn bản:", items: [
-            { text: "a) Định dạng văn bản giúp tài liệu đẹp mắt và dễ đọc hơn.", ans: "D" },
-            { text: "b) Các loại đơn từ, báo cáo có thể sử dụng bất kỳ kiểu căn lề nào tùy thích.", ans: "S" },
-            { text: "c) In đậm hoặc in nghiêng giúp nhấn mạnh những nội dung quan trọng.", ans: "D" },
-            { text: "d) Định dạng văn bản có thể làm cho máy tính chạy nhanh hơn.", ans: "S" }
+        { lesson: 12, title: "Sử dụng mẫu định dạng (Theme):", items: [
+            { text: "a) Theme giúp bài trình chiếu có định dạng thống nhất, chuyên nghiệp một cách nhanh chóng.", ans: "D" },
+            { text: "b) Lệnh chọn Theme nằm trong dải lệnh Design.", ans: "D" },
+            { text: "c) Mỗi tệp trình chiếu chỉ được phép sử dụng một Theme mặc định duy nhất (Office Theme).", ans: "S" },
+            { text: "d) Khi đổi Theme, vị trí các hộp văn bản có thể tự động thay đổi theo mẫu mới.", ans: "D" }
         ]},
-
-        // BÀI 12 (6 Câu)
-        { lesson: 12, title: "Cấu trúc của Bảng:", items: [
-            { text: "a) Một bảng có thể có nhiều hàng nhưng chỉ được phép có 1 cột.", ans: "S" },
-            { text: "b) Ô là phần giao nhau giữa một hàng và một cột.", ans: "D" },
-            { text: "c) Bảng giúp thông tin được tổ chức rõ ràng, có trật tự.", ans: "D" },
-            { text: "d) Khi đã tạo bảng, không thể thay đổi số lượng cột và hàng nữa.", ans: "S" }
+        { lesson: 12, title: "Thao tác với đối tượng hình ảnh:", items: [
+            { text: "a) Có thể tạo đường viền (Border) cho hình ảnh để hình ảnh nổi bật hơn.", ans: "D" },
+            { text: "b) Nút lệnh Send Backward dùng để đưa hình ảnh lên lớp trên cùng.", ans: "S" },
+            { text: "c) Khi thu nhỏ hình ảnh, ta nên kéo các góc để ảnh không bị méo tỉ lệ.", ans: "D" },
+            { text: "d) Phần mềm trình chiếu không hỗ trợ việc xoay (Rotate) hình ảnh.", ans: "S" }
         ]},
-        { lesson: 12, title: "Thao tác chèn và xóa hàng/cột:", items: [
-            { text: "a) Lệnh Insert Left dùng để chèn thêm một cột vào bên trái cột đang chọn.", ans: "D" },
-            { text: "b) Khi xóa một hàng, toàn bộ dữ liệu trong hàng đó sẽ bị mất.", ans: "D" },
-            { text: "c) Lệnh Delete Columns dùng để xóa toàn bộ bảng.", ans: "S" },
-            { text: "d) Không thể chèn thêm hàng vào giữa hai hàng đã có sẵn nội dung.", ans: "S" }
+        { lesson: 12, title: "Thực hành chèn đối tượng:", items: [
+            { text: "a) Lệnh Insert > Pictures dùng để chèn hình ảnh vào trang chiếu.", ans: "D" },
+            { text: "b) Văn bản được sao chép từ ngoài vào luôn luôn bị mất định dạng ban đầu.", ans: "S" },
+            { text: "c) Việc lựa chọn phông chữ đơn giản, dễ đọc (như Arial, Calibri) là rất cần thiết.", ans: "D" },
+            { text: "d) Một trang chiếu chứa càng nhiều hình ảnh thì càng đẹp và chuẩn khoa học.", ans: "S" }
         ]},
-        { lesson: 12, title: "Gộp và tách ô trong Bảng:", items: [
-            { text: "a) Lệnh Merge Cells dùng để gộp nhiều ô liền kề thành một ô lớn.", ans: "D" },
-            { text: "b) Ta có thể dùng lệnh Split Cells để tách 1 ô thành 2 hàng, 2 cột.", ans: "D" },
-            { text: "c) Gộp ô thường được sử dụng để tạo tiêu đề chung cho nhiều cột.", ans: "D" },
-            { text: "d) Lệnh Merge Cells có thể gộp các ô nằm cách xa nhau.", ans: "S" }
+        { lesson: 13, title: "Hiệu ứng động trong trình chiếu:", items: [
+            { text: "a) Hiệu ứng động làm bài trình chiếu trở nên hấp dẫn hơn.", ans: "D" },
+            { text: "b) Transitions là hiệu ứng áp dụng cho các dòng chữ bên trong trang chiếu.", ans: "S" },
+            { text: "c) Animations là dải lệnh dùng để tạo hiệu ứng cho các đối tượng (chữ, ảnh).", ans: "D" },
+            { text: "d) Nên áp dụng hiệu ứng âm thanh (tiếng pháo tay, tiếng nổ) cho mỗi lần chuyển trang.", ans: "S" }
         ]},
-        { lesson: 12, title: "Thay đổi kích thước của Bảng:", items: [
-            { text: "a) Có thể điều chỉnh độ rộng của một cột mà không ảnh hưởng đến cột khác.", ans: "D" },
-            { text: "b) Độ cao của hàng sẽ tự động nới rộng ra nếu nội dung chữ quá nhiều.", ans: "D" },
-            { text: "c) Bắt buộc tất cả các cột trong bảng phải có độ rộng bằng nhau.", ans: "S" },
-            { text: "d) Không thể điều chỉnh kích thước tổng thể của toàn bộ bảng.", ans: "S" }
+        { lesson: 13, title: "Nguyên tắc sử dụng hiệu ứng:", items: [
+            { text: "a) Hiệu ứng chuyển trang nên được sử dụng thống nhất cho toàn bộ bài trình chiếu.", ans: "D" },
+            { text: "b) Sử dụng hiệu ứng xuất hiện từ từ cho từng dòng chữ sẽ giúp người xem dễ theo dõi nội dung.", ans: "D" },
+            { text: "c) Càng dùng nhiều kiểu hiệu ứng nhấp nháy phức tạp thì bài thuyết trình càng thành công.", ans: "S" },
+            { text: "d) Hiệu ứng động có thể điều chỉnh để tự động xuất hiện hoặc xuất hiện khi click chuột.", ans: "D" }
         ]},
-        { lesson: 12, title: "Ưu điểm và ứng dụng của Bảng:", items: [
-            { text: "a) Danh sách học sinh của lớp nên được trình bày dưới dạng bảng.", ans: "D" },
-            { text: "b) Trình bày dạng bảng giúp người xem dễ dàng so sánh các số liệu.", ans: "D" },
-            { text: "c) Văn bản truyện cổ tích nên trình bày dưới dạng bảng để dễ đọc hơn.", ans: "S" },
-            { text: "d) Thông tin trong bảng rất khó để tìm kiếm so với văn bản dạng đoạn.", ans: "S" }
+        { lesson: 13, title: "Thao tác tạo hiệu ứng:", items: [
+            { text: "a) Để gỡ bỏ hiệu ứng của đối tượng, ta chọn đối tượng rồi nhấn phím Delete trên bàn phím.", ans: "S" },
+            { text: "b) Bảng Animation Pane cho phép ta xem danh sách và chỉnh sửa thứ tự các hiệu ứng.", ans: "D" },
+            { text: "c) Lệnh Apply To All trong thẻ Transitions giúp áp dụng một hiệu ứng chuyển trang cho tất cả các slide.", ans: "D" },
+            { text: "d) Nhóm hiệu ứng Entrance (màu xanh lá) dùng để làm đối tượng biến mất khỏi màn hình.", ans: "S" }
         ]},
-        { lesson: 12, title: "Các lệnh chỉnh sửa Bảng nâng cao:", items: [
-            { text: "a) Thẻ Layout của Table Tools chứa các lệnh chèn, xóa hàng cột.", ans: "D" },
-            { text: "b) Có thể căn giữa nội dung chữ vào chính giữa ô (cả chiều ngang và dọc).", ans: "D" },
-            { text: "c) Không thể thay đổi màu viền của bảng.", ans: "S" },
-            { text: "d) Thẻ Design của Table Tools dùng để tô màu nền cho các ô trong bảng.", ans: "D" }
+        { lesson: 13, title: "Hoàn thiện bài trình chiếu:", items: [
+            { text: "a) Trước khi trình chiếu chính thức, ta cần rà soát lại lỗi chính tả và hiệu ứng.", ans: "D" },
+            { text: "b) Hiệu ứng động tốt là hiệu ứng không làm người xem phân tâm khỏi nội dung chính.", ans: "D" },
+            { text: "c) Trong thẻ Animations, lệnh Start: On Click nghĩa là hiệu ứng tự động chạy cùng lúc với hiệu ứng trước.", ans: "S" },
+            { text: "d) Có thể thiết lập thời gian chạy nhanh hay chậm cho một hiệu ứng (Duration).", ans: "D" }
         ]}
     ];
 
-    // --- NGÂN HÀNG TỰ LUẬN (9 Câu lớn) ---
     const allEssayBank = [
-        // BÀI 10
-        { lesson: 10, text: "Sơ đồ tư duy là gì? Hãy nêu các thành phần cơ bản cấu tạo nên một sơ đồ tư duy và vẽ phác thảo cấu trúc của một sơ đồ tư duy có chủ đề chính là 'Gia đình em' với 3 nhánh phụ? (1.0 điểm)" },
-        { lesson: 10, text: "Em hãy nêu sự khác biệt và ưu điểm của việc sử dụng phần mềm để vẽ sơ đồ tư duy so với việc vẽ sơ đồ tư duy bằng tay trên giấy? (1.0 điểm)" },
-        { lesson: 10, text: "Cho đoạn văn bản sau: 'Máy tính để bàn thường có 4 bộ phận chính là thân máy, màn hình, bàn phím và chuột'. Em hãy thiết kế cấu trúc sơ đồ tư duy để tóm tắt câu văn trên (chỉ rõ đâu là chủ đề chính, đâu là các nhánh phụ)? (1.0 điểm)" },
-        
-        // BÀI 11
-        { lesson: 11, text: "Khi soạn thảo một lá đơn xin phép nghỉ học trên phần mềm MS Word, em sẽ sử dụng các lệnh căn lề (trái, phải, giữa) như thế nào cho các phần: Quốc hiệu (Cộng hòa xã hội...), Tên đơn (ĐƠN XIN PHÉP), và Nội dung trình bày? (1.0 điểm)" },
-        { lesson: 11, text: "Em hãy trình bày các bước thiết lập trang văn bản trước khi in theo chuẩn sau: Khổ giấy A4, Hướng trang đứng (Portrait), Lề trái 3cm, các lề còn lại 2cm? (1.0 điểm)" },
-        { lesson: 11, text: "Thao tác định dạng đoạn văn bản mang lại những lợi ích gì? Nêu các bước để thiết lập thụt lề dòng đầu tiên (First line indent) cho một đoạn văn bản? (1.0 điểm)" },
-
-        // BÀI 12
-        { lesson: 12, text: "Hãy nêu ít nhất 2 ưu điểm của việc trình bày thông tin dưới dạng bảng so với trình bày bằng văn bản thông thường? Cho 2 ví dụ thực tế về thông tin cần dùng bảng. (1.0 điểm)" },
-        { lesson: 12, text: "Em hãy trình bày các thao tác để tạo một bảng gồm 5 cột và 4 hàng trong phần mềm MS Word. Sau đó, làm thế nào để gộp toàn bộ 5 ô ở hàng đầu tiên thành một ô duy nhất để ghi tiêu đề? (1.0 điểm)" },
-        { lesson: 12, text: "Trong quá trình tạo bảng danh sách lớp, em vô tình bỏ sót cột 'Ngày sinh'. Hãy nêu các bước để chèn thêm một cột 'Ngày sinh' vào bên phải cột 'Họ và tên' đã có sẵn trong bảng? (1.0 điểm)" }
+        { lesson: 11, text: "Em được giao nhiệm vụ tạo một bài trình chiếu giới thiệu về 'Lịch sử phát triển máy tính'. Hãy nêu nội dung em dự định trình bày trên Trang tiêu đề và thiết kế cấu trúc phân cấp (gồm ý chính và ý phụ) cho 1 trang nội dung giới thiệu về 'Các thế hệ máy tính'? (1.0 điểm)" },
+        { lesson: 11, text: "Nêu các bước thực hiện để thêm một trang chiếu mới và thay đổi mẫu bố trí (Layout) của trang chiếu đó thành dạng 'Title and Content' (Tiêu đề và nội dung)? Vì sao phải sử dụng đúng mẫu bố trí? (1.0 điểm)" },
+        { lesson: 11, text: "Cho một đoạn văn bản tóm tắt chưa được định dạng. Em hãy mô tả thao tác để chuyển đổi đoạn văn bản đó thành danh sách có cấu trúc phân cấp (Sử dụng lệnh Bullet và phím Tab) trên phần mềm MS PowerPoint? (1.0 điểm)" },
+        { lesson: 12, text: "Trong bài thuyết trình về 'Bảo vệ môi trường', em muốn chèn một bức ảnh minh họa và tạo đường viền (Border) màu xanh lá cây cho bức ảnh đó. Em hãy trình bày các bước thực hiện chi tiết? (1.0 điểm)" },
+        { lesson: 12, text: "Giả sử em có một đoạn văn bản tóm tắt nội dung trong tệp MS Word. Hãy trình bày thao tác sao chép đoạn văn bản đó sang MS PowerPoint và nêu 2 nguyên tắc cần lưu ý khi định dạng lại đoạn văn bản đó trên trang chiếu (về phông chữ, cỡ chữ, màu sắc...)? (1.0 điểm)" },
+        { lesson: 12, text: "Mẫu định dạng (Theme) là gì? Hãy nêu các bước áp dụng một mẫu định dạng có sẵn cho bài trình chiếu của em. Tại sao việc sử dụng Theme lại giúp bài trình chiếu trở nên chuyên nghiệp hơn? (1.0 điểm)" },
+        { lesson: 13, text: "Để thu hút sự chú ý của khán giả vào một dòng chữ quan trọng trên màn hình, em sẽ sử dụng nhóm hiệu ứng động nào (Entrance, Emphasis hay Exit)? Hãy trình bày các bước áp dụng hiệu ứng đó. (1.0 điểm)" },
+        { lesson: 13, text: "Em hãy nêu sự khác nhau cơ bản giữa hiệu ứng chuyển trang (Transitions) và hiệu ứng đối tượng (Animations)? Trình bày các bước để áp dụng hiệu ứng chuyển trang 'Fade' cho toàn bộ các trang trong bài thuyết trình. (1.0 điểm)" },
+        { lesson: 13, text: "Một bạn học sinh thêm rất nhiều hiệu ứng chữ bay nhảy, xoay vòng lộn xộn vào bài trình chiếu với mong muốn làm bài sinh động hơn. Theo em, điều này có vi phạm nguyên tắc sử dụng hiệu ứng không? Vì sao? Em có lời khuyên gì cho bạn? (1.0 điểm)" }
     ];
 
     // ==========================================
@@ -349,17 +335,15 @@
     let selectedMcq = [], selectedTf = [], selectedEssay = [];
 
     function generateRandomExam() {
-        // 1. RÚT TRẮC NGHIỆM (MCQ) - 12 CÂU (B10: 4, B11: 4, B12: 4)
-        let mcq10_NB = shuffleArray(allMcqBank.filter(q => q.lesson === 10 && q.lvl === "NB")).slice(0, 3);
-        let mcq10_TH = shuffleArray(allMcqBank.filter(q => q.lesson === 10 && q.lvl === "TH")).slice(0, 1);
-        
+        // 1. RÚT TRẮC NGHIỆM (MCQ) - Theo đúng ma trận
         let mcq11_NB = shuffleArray(allMcqBank.filter(q => q.lesson === 11 && q.lvl === "NB")).slice(0, 4);
+        let mcq12_NB = shuffleArray(allMcqBank.filter(q => q.lesson === 12 && q.lvl === "NB")).slice(0, 4);
+        let mcq13_NB = shuffleArray(allMcqBank.filter(q => q.lesson === 13 && q.lvl === "NB")).slice(0, 2);
+        let mcq13_TH = shuffleArray(allMcqBank.filter(q => q.lesson === 13 && q.lvl === "TH")).slice(0, 2);
         
-        let mcq12_NB = shuffleArray(allMcqBank.filter(q => q.lesson === 12 && q.lvl === "NB")).slice(0, 3);
-        let mcq12_TH = shuffleArray(allMcqBank.filter(q => q.lesson === 12 && q.lvl === "TH")).slice(0, 1);
-        
-        selectedMcq = shuffleArray([...mcq10_NB, ...mcq10_TH, ...mcq11_NB, ...mcq12_NB, ...mcq12_TH]);
+        selectedMcq = shuffleArray([...mcq11_NB, ...mcq12_NB, ...mcq13_NB, ...mcq13_TH]);
 
+        // Đảo phương án MCQ
         selectedMcq.forEach(q => {
             let optsWithStatus = q.options.map((text, idx) => ({ text: text, isCorrect: (idx === q.correct) }));
             optsWithStatus = shuffleArray(optsWithStatus);
@@ -367,20 +351,20 @@
             q.correct = optsWithStatus.findIndex(o => o.isCorrect); 
         });
 
-        // 2. RÚT ĐÚNG/SAI (T/F) - 4 CÂU (B10: 1, B11: 1, B12: 2)
-        let tf10 = shuffleArray(allTfBank.filter(q => q.lesson === 10))[0];
+        // 2. RÚT ĐÚNG/SAI (T/F) - 4 câu
         let tf11 = shuffleArray(allTfBank.filter(q => q.lesson === 11))[0];
-        let tf12_1 = shuffleArray(allTfBank.filter(q => q.lesson === 12))[0]; 
+        let tf12_1 = shuffleArray(allTfBank.filter(q => q.lesson === 12))[0];
         let tf12_2 = shuffleArray(allTfBank.filter(q => q.lesson === 12))[1]; 
+        let tf13 = shuffleArray(allTfBank.filter(q => q.lesson === 13))[0];
         
-        selectedTf = shuffleArray([tf10, tf11, tf12_1, tf12_2]);
+        selectedTf = shuffleArray([tf11, tf12_1, tf12_2, tf13]);
 
-        // 3. RÚT TỰ LUẬN (ESSAY) - 3 CÂU
-        let es10 = shuffleArray(allEssayBank.filter(q => q.lesson === 10))[0];
+        // 3. RÚT TỰ LUẬN (ESSAY) - 3 câu
         let es11 = shuffleArray(allEssayBank.filter(q => q.lesson === 11))[0];
         let es12 = shuffleArray(allEssayBank.filter(q => q.lesson === 12))[0];
+        let es13 = shuffleArray(allEssayBank.filter(q => q.lesson === 13))[0];
         
-        selectedEssay = [es10.text, es11.text, es12.text]; 
+        selectedEssay = [es11.text, es12.text, es13.text]; 
     }
 
     // ==========================================
@@ -410,13 +394,13 @@
         const studentName = sessionStorage.getItem('exam_name') || "Thí sinh tự do";
         const studentSchool = sessionStorage.getItem('exam_school') || "Chưa cập nhật";
         const studentClass = sessionStorage.getItem('exam_class') || "---";
-        const studentGrade = sessionStorage.getItem('exam_grade') || "10"; // Lấy khối của học sinh
+        const studentGrade = sessionStorage.getItem('exam_grade') || "11"; // Lấy khối học, mặc định là 11
 
         document.getElementById('display-name').innerText = studentName;
         document.getElementById('display-school').innerText = studentSchool.toUpperCase();
         document.getElementById('display-class').innerText = studentClass;
         
-        // Gán tự động khối học vào chữ Môn Tin Học và Tiêu đề tab
+        // Cập nhật thông tin môn học và tiêu đề trang dựa vào biến khối học
         document.getElementById('display-subject').innerText = "TIN HỌC " + studentGrade;
         document.getElementById('page-title').innerText = "Đề ôn tự luyện - Tin học " + studentGrade;
 
@@ -653,8 +637,8 @@
         const timeTaken = Math.floor((timeEnd - timeStart) / 1000);
         let timeTakenStr = `${Math.floor(timeTaken / 60)} phút ${timeTaken % 60} giây`;
         let deviceInfo = /Mobi|Android/i.test(navigator.userAgent) ? "Điện thoại/Tablet" : "Máy tính";
-        
-        const studentGrade = sessionStorage.getItem('exam_grade') || "10";
+
+        const studentGrade = sessionStorage.getItem('exam_grade') || "11";
 
         // 4. CHUẨN BỊ PAYLOAD
         const payload = {
@@ -686,7 +670,7 @@
         }).then(() => {
             sessionStorage.setItem('report_time', timeTakenStr);
             sessionStorage.setItem('report_score_tn', totalScore.toFixed(2));
-            sessionStorage.setItem('report_subject', 'Tin học ' + studentGrade); // Tự động ghi nhận môn theo khối gửi qua trang report
+            sessionStorage.setItem('report_subject', 'Tin học ' + studentGrade); // Gửi tên môn học qua Report
             
             let mcqReportQ = "<tr>", mcqReportA = "<tr>", mcqReportQ2 = "<tr>", mcqReportA2 = "<tr>"; 
             selectedMcq.forEach((q, i) => {

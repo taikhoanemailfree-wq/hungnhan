@@ -3,16 +3,16 @@
 // ==========================================
 const CONFIG = {
     // Đường link Google Apps Script
-    GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxXLtFOuPLkssdI_GMB3-iXR3LPLwttnx_jo6p5V0n2xcJ_b9H7G8Ck-e52ZTLgAyUx/exec",
+    GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxywWJKN1uhMV4BuknfF2zomrkIMuS_7zEvjD10gIDFmFe_7SuI6LowqSrNGdRu0864/exec",
     
     // Mật khẩu đăng nhập dành cho giáo viên
-    ADMIN_PASS: "Hungnhan@123",
+    ADMIN_PASS: "123456",
     
     // Năm học hiển thị
     SCHOOL_YEAR: "2025-2026",
     
     // Khai báo tên trường (Đã sửa thành viết hoa SCHOOL_NAME)
-    SCHOOL_NAME: "THPT HƯNG NHÂN"
+    SCHOOL_NAME: "THPT Hưng Nhân"
 };
 
 // ==========================================
