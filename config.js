@@ -3,10 +3,10 @@
 // ==========================================
 const CONFIG = {
     // Đường link Google Apps Script
-    GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwhDm8AmwYt77sbv_iXtIqVw_PbFhxNP7SfWVU31NNjbPyZNaHrpqLyZ7pv665hn694/exec",
+    GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxXLtFOuPLkssdI_GMB3-iXR3LPLwttnx_jo6p5V0n2xcJ_b9H7G8Ck-e52ZTLgAyUx/exec",
     
     // Mật khẩu đăng nhập dành cho giáo viên
-    ADMIN_PASS: "123456",
+    ADMIN_PASS: "Hungnhan@123",
     
     // Năm học hiển thị
     SCHOOL_YEAR: "2025-2026",
