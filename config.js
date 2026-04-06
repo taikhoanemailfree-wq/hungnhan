@@ -3,7 +3,7 @@
 // ==========================================
 const CONFIG = {
     // Đường link Google Apps Script
-    GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxywWJKN1uhMV4BuknfF2zomrkIMuS_7zEvjD10gIDFmFe_7SuI6LowqSrNGdRu0864/exec",
+    GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxZLMU0Q-s7Qn3b8KmPfgnAhD6RbPkP8c7s_lmkglDlULwKvwOrjwev2KlqmHOhCmNa/exec",
     
     // Mật khẩu đăng nhập dành cho giáo viên
     ADMIN_PASS: "123456",
